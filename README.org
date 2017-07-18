@@ -1,0 +1,44 @@
+
+新手入门使用的配置 for Spacemacs
+
+* 使用说明
+1. $HOME 文件夹下新建两个文件夹：.emacs.d 和 .spacemacs.d
+
+2. .emacs.d 里是spacemacs的原生配置; 
+
+3. .spacemacs.d 里是本配置的存放路径. 
+
+4. 请确保 $HOME 文件夹下没有 .spacemacs 文件.
+
+* 配置说明
+1. init.el    主要配置文件,相当于 .spacemacs 或者 .emacs, 关于spacemacs的一些相关配
+              置可以在此找到.
+
+2. custom.el  一些自动生成的配置, 尽量不要去改动. 可以通过 M-x customize-group
+              来进行设置, 很方便, 如果对配置不满意, 可以先从这里来修改.
+
+3. layers     主要存放一些简单易用的layer, 供init.el文件调用. 这是spacemacs出色的
+              地方, 可以通过多个layer对spacemacs进行配置.
+
+4. snippets   主要存放一些模板, 这个目录可以更改, 为了保持易用性, 这里保持默认.
+
+5. Misc       存放一些配置文件
+
+6. 本配置的测评环境为Windows, 但是在linux系统上应该同样可用.
+
+* 各个layer的使用说明 
+
+1. zx-program    外部程序调用, 如aspell, pt, w3m, sdcv 等.
+
+2. zx-input      Emacs 内部配置输入法, 主要是拼音和五笔, 借用了陈斌的配置.
+
+3. zx-chinese    使用 chinese-fonts-setup 来设置字体, 主要是为了省事.
+
+4. zx-org        org-mode的一些简单配置
+
+5. zx-latex      latex的相关配置, 导出pdf时会用到.
+   
+* 尽管提意见
+有哪部分不明白或者使用有问题的话, 尽管提意见. 
+
+想要什么功能的话, 如果是大众化的, 会考虑加上. 
