@@ -24,21 +24,30 @@
 
 5. Misc       存放一些配置文件
 
-6. 本配置的测评环境为Windows, 但是在linux系统上应该同样可用.
+6. 本配置的测试环境为Windows, 但是在linux系统上应该同样可用.
+
+   - 初次测试, 没有问题 <2017-07-18 Tue 14:52>
 
 * 各个layer的使用说明 
 
 1. zx-program    外部程序调用, 如aspell, pt, w3m, sdcv 等.
 
-2. zx-input      Emacs 内部配置输入法, 主要是拼音和五笔, 借用了陈斌的配置.
+2. zx-modeline   简化的modeline
 
-3. zx-chinese    使用 chinese-fonts-setup 来设置字体, 主要是为了省事.
+3. zx-input      Emacs 内部配置输入法, 主要是拼音和五笔, 借用了陈斌的配置.
 
-4. zx-org        org-mode的一些简单配置
+4. zx-latex      latex的相关配置, 导出pdf时会用到.
 
-5. zx-latex      latex的相关配置, 导出pdf时会用到.
+5. zx-org        org-mode的一些简单配置
+
+6. zx-org-latex   org文件内latex公式预览, 导出pdf.
+
+7. zx-org-bibtex  利用bibtex对文献进行管理
+
+6. zx-fonts    使用 chinese-fonts-setup 来设置字体, 主要是为了省事.
    
 * 尽管提意见
 有哪部分不明白或者使用有问题的话, 尽管提意见. 
 
 想要什么功能的话, 如果是大众化的, 会考虑加上. 
+

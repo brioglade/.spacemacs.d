@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: Cost
+# key: cost-
+# --
+:PROPERTIES:
+:DATE:     ${1:}
+:Cost:     ${2:0}
+:END:
