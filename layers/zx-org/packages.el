@@ -1,6 +1,6 @@
 (defconst zx-org-packages
   '(
-    ox-epub
+    ;; ox-epub
     ))
 
 (defun zx-org/init-ox-epub()

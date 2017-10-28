@@ -1,8 +1,8 @@
 
 (with-eval-after-load 'org
-  (setq-default org-agenda-files (list (concat Misc "Files/")))
-  (setq diary-file (concat Misc "Files/diary"))
-  (setq bookmark-default-file (concat Misc "Files/bookmarks"))
+  (setq-default org-agenda-files (list "~/Misc/Files/"))
+  (setq diary-file "~/Misc/Files/diary")
+  (setq bookmark-default-file "~/Misc/Files/bookmarks")
 
   (setq org-download-heading-lvl nil)
   (setq org-download-annotate-function 'ignore)

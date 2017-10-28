@@ -63,8 +63,8 @@ values."
      ;;                  version-control-diff-tool 'git-gutter
      ;;                  version-control-diff-side 'left
      ;;                  version-control-global-margin t)
-     html
-     python
+     ;; html
+     ;; python
 
      ;; Documents
      (spell-checking :variables
@@ -90,6 +90,7 @@ values."
      zx-org-latex
      zx-org-bibtex
      zx-fonts
+	 zx-misc
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -349,8 +350,6 @@ before packages are loaded. If you are unsure, you should try in setting them in
         '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
           ("org-cn"   . "http://elpa.emacs-china.org/org/")
           ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
-
-  (defvar Misc "~/.spacemacs.d/Misc/")
 
   (setq server-auth-dir (concat Misc "server/"))
   ;; delete server file
