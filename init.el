@@ -36,7 +36,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; zx-program
+     zx-program
      helm
      better-defaults
      (auto-completion :variables
@@ -83,14 +83,13 @@ values."
 
      games
 
-     zx-modeline
-     zx-input
+     ;; zx-modeline
+     zx-chinese
      zx-latex
      zx-org
      zx-org-latex
      zx-org-bibtex
-     zx-fonts
-	 zx-misc
+     zx-misc
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -351,6 +350,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
           ("org-cn"   . "http://elpa.emacs-china.org/org/")
           ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
 
+(defvar Misc "~/.spacemacs.d/Files/Misc/")
+  
   (setq server-auth-dir (concat Misc "server/"))
   ;; delete server file
   (if (file-exists-p (concat Misc "server/server"))
