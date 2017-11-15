@@ -17,5 +17,6 @@ Return the updated `exec-path'"
 				   (concat tools "rg/")
 				   (concat tools "Git/bin/")
 				   "c:/texlive/2017/bin/win32/"
+				   "d:/Tools/ImageMagick/"
 				   )))
   )

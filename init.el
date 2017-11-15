@@ -415,10 +415,9 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (defvar misc "d:/misc/")
   (defvar tools "d:/Tools/")
 
-  (setq server-auth-dir (concat misc "server/"))
   ;; delete server file
-  (if (file-exists-p (concat misc "server/server"))
-      (delete-file (concat misc "server/server")))
+  (if (file-exists-p "~/.emacs.d/server/server")
+      (delete-file "~/.emacs.d/server/server"))
   ;; (require 'server)
   ;; (unless (server-running-p) (server-start))
 

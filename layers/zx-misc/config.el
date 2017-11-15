@@ -16,12 +16,12 @@
 
   ;; JulyFinal from https://emacs-china.org/t/topic/2900/3
   ;; 设置垃圾回收，在Windows下，emacs25版本会频繁出发垃圾回收，所以需要设置
-  (setq gc-cons-threshold (* 512 1024 1024))
+(setq gc-cons-threshold (* 512 1024 1024))
   (setq gc-cons-percentage 0.5)
   (run-with-idle-timer 5 t #'garbage-collect)
   ;; 显示垃圾回收信息，这个可以作为调试用
   ;; (setq garbage-collection-messages t)
-  )
+  ) 
 
 ;; 用空格替代TAB(nil) or not(t).
 (setq-default indent-tabs-mode t)
@@ -29,8 +29,6 @@
 (setq-default default-tab-width 4)
 
 (menu-bar-mode t)
-
-(setq frame-title-format '(:eval (lx/layouts-for-title-bar)))
 
 
 ;; 下面是我自己的配置，可按需更改 -- zhixing
@@ -42,8 +40,8 @@
 ;; (add-hook 'after-init-hook '(lambda () (add-to-list 'auth-sources (concat files "MySpace/auth.gpg"))))
 
 (with-eval-after-load 'org
-  (setq org-ref-bibliography-notes (concat files "123.org")
-		org-ref-default-bibliography (list (concat files "123.bib"))
+  (setq org-ref-bibliography-notes (concat files "amaze.org")
+		org-ref-default-bibliography (list (concat files "amaze.bib"))
 		org-ref-pdf-directory (concat files "PDFs/")
 		))
 
