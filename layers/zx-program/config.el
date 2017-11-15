@@ -15,10 +15,7 @@ Return the updated `exec-path'"
   (mapc #'wttr/prepend-to-exec-path
 		(reverse ( list
 				   (concat tools "rg/")
-				   (concat tools "Aspell/bin/")
 				   (concat tools "Git/bin/")
-           "path/to/latex"
-           "path/to/imagemagick_portable"
+				   "c:/texlive/2017/bin/win32/"
 				   )))
-
   )
