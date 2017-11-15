@@ -35,16 +35,16 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      zx-program
-	 (helm :variables helm-no-header t)
+     (helm :variables helm-no-header t)
 
-	 (auto-completion :variables
-					  auto-completion-return-key-behavior 'complete
-					  auto-completion-tab-key-behavior 'cycle
-					  auto-completion-complete-with-key-sequence nil
-					  auto-completion-complete-with-key-sequence-delay 0.1
-					  auto-completion-enable-snippets-in-popup t
-					  auto-completion-enable-sort-by-usage t
-					  auto-completion-private-snippets-directory (concat misc "snippets/"))
+     (auto-completion :variables
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-complete-with-key-sequence nil
+                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-sort-by-usage t
+                      auto-completion-private-snippets-directory (concat misc "snippets/"))
      better-defaults
      emacs-lisp
      git
@@ -53,50 +53,50 @@ This function should only modify configuration layer settings."
      org
      (shell :variables
             shell-default-height 30
-			shell-default-position 'bottom)
-	 (spell-checking :variables
-					 enable-flyspell-auto-completion nil
-					 ;; spell-checking-enable-by-default nil
-					 )
-	 ;; syntax-checking
-	 (version-control :variables
-					  version-control-diff-tool 'diff-hl
-					  version-control-diff-side 'left)
-	 (ibuffer :variables ibuffer-group-buffers-by 'projects)
+            shell-default-position 'bottom)
+     (spell-checking :variables
+                     enable-flyspell-auto-completion nil
+                     spell-checking-enable-by-default nil
+                     )
+     ;; syntax-checking
+     (version-control :variables
+                      version-control-diff-tool 'diff-hl
+                      version-control-diff-side 'left)
+     (ibuffer :variables ibuffer-group-buffers-by 'projects)
 
      bibtex
      latex
-	 autohotkey
-	 html
+     autohotkey
+     html
 
-	 ;; modeline 设置
-     zx-modeline
-	 ;; 搜索引擎
+     ;; modeline 设置
+     ;; zx-modeline
+     ;; 搜索引擎
      zx-search
-	 ;; 设置邮箱，使用gnus来查看邮件
+     ;; 设置邮箱，使用gnus来查看邮件
      zx-email
-	 ;; 字体，输入法，汉字搜索等设置
+     ;; 字体，输入法，汉字搜索等设置
      zx-chinese
-	 ;; 查询单词
+     ;; 查询单词
      zx-english
 
-	 ;; LaTeX 与 SumatraPDF 的协同工作
+     ;; LaTeX 与 SumatraPDF 的协同工作
      zx-latex
-	 ;; 自定义的一些配置，用于格式化bib文件等
-	 zx-bibtex
+     ;; 自定义的一些配置，用于格式化bib文件等
+     zx-bibtex
 
-	 ;; 个人的一些配置
+     ;; 个人的一些配置
      zx-org
-	 ;; Windows上实现org内图片自动缩放
+     ;; Windows上实现org内图片自动缩放
      zx-org-image
-	 ;; 使用org-download来插入图片
+     ;; 使用org-download来插入图片
      zx-org-download
 
      zx-org-bibtex
      zx-org-latex
 
-	 ;; 个人配置，使用前需要设置
-     ;; zx-misc
+     ;; 个人配置，使用前需要设置
+     zx-misc
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -106,7 +106,7 @@ This function should only modify configuration layer settings."
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(evil-unimpaired spaceline org-bullets
+   dotspacemacs-excluded-packages '(evil-unimpaired org-bullets
                                                     rainbow-delimiters
                                                     )
    ;; Defines the behaviour of Spacemacs when installing packages.
@@ -152,10 +152,10 @@ It should only modify the values of Spacemacs settings."
    ;; section of the documentation for details on available variables.
    ;; (default 'vim)
    dotspacemacs-editing-style '(hybrid :variables
-									   hybrid-mode-enable-evilified-state t
-									   hybrid-mode-enable-hjkl-bindings t
-									   hybrid-mode-use-evil-search-module nil
-									   hybrid-mode-default-state 'normal)
+                                       hybrid-mode-enable-evilified-state t
+                                       hybrid-mode-enable-hjkl-bindings t
+                                       hybrid-mode-use-evil-search-module nil
+                                       hybrid-mode-default-state 'normal)
    ;; If non-nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -164,7 +164,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner nil
+   dotspacemacs-startup-banner `official
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
    ;; Possible values for list-type are:
@@ -329,14 +329,14 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; (default nil)
    dotspacemacs-line-numbers '(:relative nil
-										 :disabled-for-modes dired-mode
-										 doc-view-mode
-										 markdown-mode
-										 org-mode
-										 bibtex-mode
-										 pdf-view-mode
-										 text-mode
-										 :size-limit-kb 1000)
+                                         :disabled-for-modes dired-mode
+                                         doc-view-mode
+                                         markdown-mode
+                                         org-mode
+                                         bibtex-mode
+                                         pdf-view-mode
+                                         text-mode
+                                         :size-limit-kb 1000)
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -406,9 +406,9 @@ It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; 使用emacs-china的源来下载package
   (setq configuration-layer--elpa-archives
-		'(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
-		  ("org-cn"   . "http://elpa.emacs-china.org/org/")
-		  ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+        '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+          ("org-cn"   . "http://elpa.emacs-china.org/org/")
+          ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
 
   ;; 个人配置 -- zhixing
   (defvar files "d:/Files/")

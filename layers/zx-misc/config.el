@@ -42,14 +42,9 @@
 ;; (add-hook 'after-init-hook '(lambda () (add-to-list 'auth-sources (concat files "MySpace/auth.gpg"))))
 
 (with-eval-after-load 'org
-  (setq org-ref-bibliography-notes (concat files "Research.org")
-		org-ref-default-bibliography (list (concat files "BibLatex/research.bib")
-										   (concat files "BibLatex/leader.bib")
-										   (concat files "BibLatex/peptide.bib")
-										   (concat files "BibLatex/experiments.bib")
-										   (concat files "BibLatex/surface-potential.bib")
-										   (concat files "BibLatex/temp.bib"))
-		org-ref-pdf-directory (concat doc "Research/PDFs/PDFs/")
+  (setq org-ref-bibliography-notes (concat files "123.org")
+		org-ref-default-bibliography (list (concat files "123.bib"))
+		org-ref-pdf-directory (concat files "PDFs/")
 		))
 
 (setq ispell-personal-dictionary (concat misc "aspell_en.pws"))
