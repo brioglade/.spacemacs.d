@@ -16,30 +16,30 @@
     :config
     (cnfonts-enable)
     (add-hook 'after-make-frame-functions #'cnfonts-set-font-with-saved-step)
-    (setq cnfonts-profiles
-          '("normal" "org-mode" "paper"))
     ))
 
 (defun zx-chinese/init-pyim()
   (use-package pyim
-    :config
-    (setq default-input-method "pyim")
-    (setq pyim-default-scheme 'wubi)
-	(if (and my-pyim-directory
-			 (file-exists-p (my-pyim-personal-dict)))
-		(add-to-list 'pyim-dicts (list :name "NewCentryWubiForEmacs" :file (my-pyim-personal-dict))))
+	:config
+	(setq default-input-method "pyim")
+	(setq pyim-punctuation-translate-p '(auto yes no))   ;中文使用全角标点，英文使用半角标点。
 	(add-hook 'emacs-startup-hook
 			  #'(lambda () (pyim-restart-1 t)))
 	(setq pyim-page-tooltip 'popup)
-    (setq pyim-page-style 'vertical)
+	(setq pyim-page-style 'vertical)
 	(setq pyim-page-length 5)
-    (define-key pyim-mode-map ";" '(lambda ()
-                                     (interactive)
-                                     (pyim-page-select-word-by-number 2)))
-    (define-key pyim-mode-map "'" '(lambda ()
-                                     (interactive)
-                                     (pyim-page-select-word-by-number 3)))
-	(setq pyim-punctuation-translate-p '(auto yes no))   ;中文使用全角标点，英文使用半角标点。
+
+	;; 使用五笔输入法 -- zhixing
+	(setq pyim-default-scheme 'wubi)
+	(if (and my-pyim-directory
+			 (file-exists-p (my-pyim-personal-dict)))
+		(add-to-list 'pyim-dicts (list :name "NewCentryWubiForEmacs" :file (my-pyim-personal-dict))))
+	(define-key pyim-mode-map ";" '(lambda ()
+									 (interactive)
+									 (pyim-page-select-word-by-number 2)))
+	(define-key pyim-mode-map "'" '(lambda ()
+									 (interactive)
+									 (pyim-page-select-word-by-number 3)))
 	))
 
 (defun zx-chinese/init-pinyin-search()
@@ -50,6 +50,7 @@
 (defun zx-chinese/init-chinese-conv ()
   (use-package chinese-conv
     :config
+	;; 如果使用有问题，请查看官方的文档。 -- zhixing
 	(setq chinese-conv-opencc-data (concat tools "opencc/"))
 	))
 
@@ -89,4 +90,3 @@
     (setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
     (setq calendar-holidays cal-china-x-important-holidays)
     ))
-

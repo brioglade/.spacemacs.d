@@ -1,23 +1,19 @@
 
-;; org-download, add pictures to org files and delete original files.
-;; abo-abo helped a lot.
-(defun zx-org/delete-file (link filename)
-  (setq link (org-link-unescape link))
-  (let ((filename (and (string-match "\\`file:\\(.*\\)\\'" link)
-                       (match-string 1 link))))
-    (when (and filename
-               (file-exists-p filename))
-      (delete-file filename t))))
+;; Xu Chunyang shared this https://emacs-china.org/t/topic/3437
+(defun chunyang-org-babel-highlight-result ()
+  "Highlight the result of the current source block.
+Adapt from `org-babel-remove-result'."
+  (interactive)
+  (let ((location (org-babel-where-is-src-block-result nil nil)))
+    (when location
+      (save-excursion
+        (goto-char location)
+        (when (looking-at (concat org-babel-result-regexp ".*$"))
+          (pulse-momentary-highlight-region
+           (1+ (match-end 0))
+           (progn (forward-line 1) (org-babel-result-end))))))))
 
-(defun zx-org/org-download-method (link)
-  (let ((filename
-         (file-name-nondirectory
-          (car (url-path-and-query
-                (url-generic-parse-url link)))))
-        (dirname (concat "Images/" (file-name-sans-extension (buffer-name)) "-img/")))
-    (unless (file-exists-p dirname)
-      (make-directory dirname :parents))
-    (expand-file-name (format "%s.%s"
-                              (format-time-string "%Y-%m-%d_%H-%M-%S")
-                              (file-name-extension filename))
-                      dirname)))
+(add-hook 'org-babel-after-execute-hook
+          (defun chunyang-org-babel-highlight-result-maybe ()
+            (when (eq this-command 'org-ctrl-c-ctrl-c)
+              (chunyang-org-babel-highlight-result))))

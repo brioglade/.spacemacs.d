@@ -1,10 +1,22 @@
+
+;; Chinese-birthday setup from eshion (emacs-china.org)
+(defun chinese-birthday (lunar-month lunar-day &optional year mark)
+  (if year (let* ((d-date (diary-make-date lunar-month lunar-day year))
+                  (a-date (calendar-absolute-from-gregorian d-date))
+                  (c-date (calendar-chinese-from-absolute a-date))
+                  (cycle (car c-date))
+                  (yy (cadr c-date))
+                  (y (+ (* 100 cycle) yy)))
+             (diary-chinese-anniversary lunar-month lunar-day y mark))
+    (diary-chinese-anniversary lunar-month lunar-day year mark)))
+
 (defun evil-toggle-input-method ()
   "when toggle on input method, goto evil-insert-state. "
   (interactive)
 
   ;; load IME when needed, less memory footprint
-  (unless (featurep 'chinese-pyim)
-    (require 'chinese-pyim))
+  (unless (featurep 'pyim)
+    (require 'pyim))
 
   ;; some guy don't use evil-mode at all
   (cond
@@ -26,36 +38,15 @@
   ad-do-it
   (if current-input-method (message "IME on!")))
 
-(global-set-key (kbd "C-\\") 'evil-toggle-input-method)
 ;; }}
 
 (defvar my-pyim-directory
-  (concat Misc)
+  (concat misc "WubiLexicon/")
   "There directory of peronsal dictionaries for chinese-pyim.")
 
 (add-to-list 'auto-mode-alist '("\\.pyim\\'" . text-mode))
 
 (defun my-pyim-personal-dict (&optional dict-name)
   (file-truename (concat (file-name-as-directory my-pyim-directory)
-                         (or dict-name "personal"))))
-
-(defun my-pyim-export-dictionary ()
-  "Export words you use in chinese-pyim into personal dictionary."
-  (interactive)
-  (with-temp-buffer
-    (maphash
-     #'(lambda (key value)
-         ;; only export two character word
-         (if (string-match "-" key)
-             (insert (concat key
-                             " "
-                             (mapconcat #'identity value ""))
-                     "\n")))
-     pyim-dcache-icode2word)
-    (unless (and my-pyim-directory
-                 (file-directory-p my-pyim-directory))
-      (setq my-pyim-directory
-            (read-directory-name "Personal Chinese dictionary directory:")))
-    (if my-pyim-directory
-        (write-file (my-pyim-personal-dict)))))
+                         (or dict-name "NewCentryWubiForEmacs.pyim"))))
 

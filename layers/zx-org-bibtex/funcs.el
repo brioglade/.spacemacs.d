@@ -35,3 +35,10 @@
                    (s-capitalize author)
                    (replace-regexp-in-string "/" "_" doi))))))))
 
+(defun zx-org-bibtex/copy-note ()
+  (interactive)
+  (save-excursion
+	(bibtex-beginning-of-entry)
+	(kill-new
+	 (org-ref-reftex-format-citation (bibtex-parse-entry t) "%t cite:%k"))))
+
