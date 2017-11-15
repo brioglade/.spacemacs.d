@@ -96,7 +96,7 @@ This function should only modify configuration layer settings."
      zx-org-latex
 
 	 ;; 个人配置，使用前需要设置
-     zx-misc
+     ;; zx-misc
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -411,10 +411,9 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 		  ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
 
   ;; 个人配置 -- zhixing
-  (defvar doc "~/Documents/")
-  (defvar files "~/Documents/Files/")
-  (defvar misc "~/.misc/")
-  (defvar tools "~/tc/Tools/")
+  (defvar files "d:/Files/")
+  (defvar misc "d:/misc/")
+  (defvar tools "d:/Tools/")
 
   (setq server-auth-dir (concat misc "server/"))
   ;; delete server file

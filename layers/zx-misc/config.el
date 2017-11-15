@@ -34,12 +34,12 @@
 
 
 ;; 下面是我自己的配置，可按需更改 -- zhixing
-(setq default-directory (concat doc "Files/"))
+(setq default-directory "d:/Files/")
 
-(setq-default org-agenda-files (list (concat doc "Files/")))
+(setq-default org-agenda-files (list "d:/Files/"))
 (setq bookmark-default-file (concat misc "bookmarks"))
 
-(add-hook 'after-init-hook '(lambda () (add-to-list 'auth-sources (concat files "MySpace/auth.gpg"))))
+;; (add-hook 'after-init-hook '(lambda () (add-to-list 'auth-sources (concat files "MySpace/auth.gpg"))))
 
 (with-eval-after-load 'org
   (setq org-ref-bibliography-notes (concat files "Research.org")
@@ -70,33 +70,4 @@
 (setq layouts-enable-autosave t)
 ;; (persp-load-state-from-file (concat misc "layout/zhixing"))
 
-;; Open Specific Files
-(defun zx-misc/Temp.org ()
-  (interactive)
-  (find-file (concat files "Temp.org")))
-
-(defun zx-misc/Research.org ()
-  (interactive)
-  (find-file (concat files "Research.org")))
-
-(setq gnus-default-directory (concat misc "Gnus/"))
-(setq gnus-home-directory (concat misc "Gnus/"))
-(setq gnus-dribble-directory (concat misc "Gnus/"))
-(setq gnus-directory (concat misc "Gnus/News/"))
-(setq gnus-article-save-directory (concat misc "Gnus/News/"))
-(setq gnus-kill-files-directory (concat misc "Gnus/News/trash/"))
-(setq gnus-agent-directory (concat misc "Gnus/News/agent/"))
-(setq gnus-cache-directory (concat misc "Gnus/News/cache/"))
-(setq gnus-cache-active-file (concat misc "Gnus/News/cache/active"))
-(setq message-directory (concat misc "Gnus/Mail/"))
-(setq message-auto-save-directory (concat misc "Gnus/Mail/drafts"))
-(setq mail-source-directory (concat misc "Gnus/Mail/incoming"))
-(setq nnmail-message-id-cache-file (concat misc "Gnus/.nnmail-cache"))
-(setq nnml-newsgroups-file (concat misc "Gnus/Mail/newsgroup"))
-(setq nntp-marks-directory (concat misc "Gnus/News/marks"))
-
-(with-eval-after-load 'evil
-  (evil-set-initial-state 'calendar-mode 'emacs)
-  (evil-set-initial-state 'text-mode 'emacs)
-  )
 
