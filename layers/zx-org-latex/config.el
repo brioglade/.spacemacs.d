@@ -4,15 +4,19 @@
 				 "zx-article"
 				 "\\documentclass[12pt]{article}
 				  [NO-DEFAULT-PACKAGES]
-				  %中文设置
+
+				  %中文设置, put your code about chinese fonts here.
+				  % replace the fonts, it will be ok.
 				  \\usepackage{fontspec}
 				  \\usepackage{xeCJK}
 				  \\setmainfont[Mapping=tex-text]{Times New Roman}
 				  \\setsansfont[Mapping=tex-text]{Arial}
 				  \\setmonofont{Source Code Pro}
-				  \\setCJKmainfont[BoldFont=STXihei,ItalicFont=Microsoft YaHei]{SimSun}
-				  \\setCJKsansfont{STXihei}
+				  \\setCJKmainfont[BoldFont=Microsoft YaHei,ItalicFont=Microsoft YaHei]{Microsoft YaHei}
+				  \\setCJKsansfont{Microsoft YaHei}
 				  \\setCJKmonofont{Microsoft YaHei}
+
+
 				  \\punctstyle{hangmobanjiao}
 				  % 中文断行
 				  \\XeTeXlinebreaklocale \"zh\"

@@ -5,8 +5,8 @@
 
 ;; 需要设置SumatraPDF和emacsclientw的路径 -- zhixing
 (setq TeX-view-program-list
-	  '(("Sumatra PDF" ("\"d:/tc/Tools/SumatraPDF/SumatraPDF.exe\" -reuse-instance"
-						(mode-io-correlate " -forward-search %b %n -inverse-search \"d:/tc/Tools/Emacs/Emacs/bin/emacsclientw.exe -n +%%l %%f\"") " %o"))))
+	  '(("Sumatra PDF" ("\"d:/Tools/Sumatrapdf/SumatraPDF.exe\" -reuse-instance"
+						(mode-io-correlate " -forward-search %b %n -inverse-search \"d:/Tools/Emacs/bin/emacsclientw.exe -n +%%l %%f\"") " %o"))))
 
 (eval-after-load 'tex
   '(progn
@@ -28,7 +28,7 @@
 							  ("^dvi$" "." "yap -1 %dS %d")
 
 							  ;; 需要设置 SumatraPDF 的路径 -- zhixing
-							  ("^pdf$" "." "d:/tc/Tools/SumatraPDF/SumatraPDF.exe -reuse-instance \"\" %o")
+							  ("^pdf$" "." "d:/Tools/SumatraPDF/SumatraPDF.exe -reuse-instance \"\" %o")
 							  ("^html?$" "." "start \"\" %o")))
 
 (setq TeX-source-correlate-start-server t)
